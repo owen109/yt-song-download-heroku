@@ -4,7 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./www.js",
+    "build": "grunt dist",
+    "postinstall": "./node_modules/bower/bin/bower install && npm run build",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +19,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.12.15",
     "node-fetch": "^2.6.1",
-    "ytdl-core": "^4.8.3"
+    "ytdl-core": "^4.8.3",
+    "bower":"^1.8.0",
+    "grunt":"^1.0.1"
   }
 }
